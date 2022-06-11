@@ -1,0 +1,26 @@
+<div th:fragment="header">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal" th:text="${title}"></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/">Main page</a>
+            <a class="p-2 text-dark" href="/blog">Blog</a>
+            <a class="p-2 text-dark" href="/about">About</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>
+
+            <a class="btn btn-outline-primary" href="/blog/add">Add Blog</a>
+
+            <form th:action="@{/logout}" method="post">
+                <input class="btn btn-outline-primary" type="submit" value="Logout"/>
+            </form>
+
+
+            <!--            <div th:if="${login}">-->
+            <!--                <a class="btn btn-outline-primary" href="/login">Login</a>-->
+            <!--            </div>-->
+            <!--        <a class="btn btn-outline-primary" href="#">Sign up</a>-->
+        </nav>
+    </div>
+    <div class="container mt-5">
+        <h1 th:text="${title}"></h1>
+    </div>
+</div>

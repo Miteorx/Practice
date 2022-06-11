@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5 mb-5">
+    <div th:each="el : ${post}">
+    <form method="post">
+        <input type="text" th:value="${el.title}" name="title" placeholder="Input title" class="form-control"><br>
+        <input type="text" th:value="${el.anons}" name="anons" placeholder="Input anons" class="form-control"><br>
+        <textarea name="full_text" th:text="${el.fullText}" placeholder="Input full text" class="form-control" /><br>
+        <button type="submit" class="button-success">Confirm</button>
+    </form>
+    </div>
+</div>
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>
